@@ -1,5 +1,5 @@
 body {
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
@@ -7,7 +7,7 @@ body {
 }
 
 #container-one {
-    width: 40vw;
+    min-width: 35vw;
     position: relative;
 }
 
@@ -40,10 +40,92 @@ body {
     font-size: 12px;
 }
 
-.footer > a {
+a {
     color: inherit;
 }
 
 .opaque {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+#container-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(245, 245, 245);
+}
+
+#container-two > * {
+    padding-left: 48px;
+    padding-right: 168px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 21px;
+}
+
+form {
+    background-color: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form > * {
+    margin-bottom: 16px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(50% - 16px);
+    box-sizing: border-box;
+    margin-right: 16px;
+    margin-bottom: 24px;
+}
+
+.input > label {
+    font-size: 12px;
+    font-weight: 700;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.input > input {
+    width: 80%;
+    border: 2px solid #E5E7EB;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.input > input:focus {
+    border-color: brown;
+    outline: none;
+}
+
+button {
+    background-color: brown;
+    color: white;
+    padding: 12px 32px;
+    font-weight: 700;
+    border: 0;
+    border-radius: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+form + div > a {
+    color: brown;
+    font-weight: 700;
+    text-decoration: none;
 }
