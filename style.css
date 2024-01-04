@@ -110,6 +110,16 @@ form > * {
     outline: none;
 }
 
+.error {
+    border-color: red;
+    outline: none;
+}
+
+.error-message {
+    font-size: 12px;
+    color: brown;
+}
+
 button {
     background-color: brown;
     color: white;
@@ -128,4 +138,9 @@ form + div > a {
     color: brown;
     font-weight: 700;
     text-decoration: none;
+}
+
+form > p {
+    font-size: 12px;
+    color: dimgray;
 }

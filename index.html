@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src=""></script>
+    <script src="script.js" defer></script>
     <title>Sign-up Form</title>
 </head>
 <body>
@@ -24,30 +24,31 @@
             <h1>Let's get started</h1>
             <div class="form">
                 <div class="input">
-                    <label for="first_name">First name</label>
-                    <input type="text" id="first_name" placeholder="John" name="first_name">
+                    <label for="first_name">First name*</label>
+                    <input type="text" id="first_name" placeholder="John" name="first_name" required>
                 </div>
                 <div class="input">
-                    <label for="last_name">Last name</label>
-                    <input type="text" id="last_name" placeholder="Smith" name="last_name">
+                    <label for="last_name">Last name*</label>
+                    <input type="text" id="last_name" placeholder="Smith" name="last_name" required>
                 </div>
                 <div class="input">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="johnsmith@mail.com" name="email">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" placeholder="johnsmith@mail.com" name="email" required>
                 </div>
                 <div class="input">
                     <label for="phone_number">Phone number</label>
-                    <input type="tel" id="phone_number" placeholder="07123456789" name="phone_number">
+                    <input type="tel" id="phone_number" placeholder="07123456789" name="phone_number" pattern="0[0-9]{9}">
                 </div>
                 <div class="input">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <div class="input">
-                    <label for="confirm_password">Confirm password</label>
-                    <input type="password" id="confirm_password" name="confirm_password">
+                    <label for="confirm_password">Confirm password*</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
                 </div>
             </div>
+            <p>* Required</p>
             <button type="submit">Create Account</button>
         </form>
         <div>Already have an account? <a href="#">Log in</a></div>
