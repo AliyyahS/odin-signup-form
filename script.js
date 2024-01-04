@@ -10,6 +10,7 @@ const confirmPassword = document.querySelector('#confirm_password')
 // DOM elements
 
 const errorMessage = document.querySelector('.error-message')
+const submitBtn = document.querySelector('#submit_button')
 
 // Functions
 
@@ -33,11 +34,30 @@ function validatePassword(a, b) {
 
     if (b != a) {
         confirmPassword.classList.add('error')
-        errorMessage.textContent = 'Passwords do not match'
+        errorMessage.textContent = 'Make sure the passwords match!'
     } else {
         confirmPassword.classList.remove('error')
         errorMessage.textContent = ''
     }
+}
+
+function validateFormInput() {
+    if (!isValid(firstName) ||
+        !isValid(lastName) ||
+        !isValid(email) || 
+        !isValid(password) || 
+        !isValid(confirmPassword)) {
+            errorMessage.textContent = 'Please fill in all the required fields. '
+    } else {
+        errorMessage.textContent = 'All the fields are correctly entered!'
+    }
+    return false
+}
+
+function isValid(element) {
+    if (element.value === '' || element.checkValidity() === 'false') {
+        return false
+    } else return true
 }
 
 // Event listeners
@@ -62,4 +82,9 @@ password.addEventListener('input', () => {
 
 confirmPassword.addEventListener('input', () => {
     validatePassword(password, confirmPassword)
+})
+
+submitBtn.addEventListener('click', (event) => {
+    validateFormInput()
+    event.preventDefault()
 })
