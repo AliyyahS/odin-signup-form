@@ -44,7 +44,8 @@ function validatePassword(a, b) {
 function validateFormInput() {
     if (!isValid(firstName) ||
         !isValid(lastName) ||
-        !isValid(email) || 
+        !isValid(email) ||
+        !isValid(phoneNumber) || 
         !isValid(password) || 
         !isValid(confirmPassword)) {
             errorMessage.textContent = 'Please fill in all the required fields. '
@@ -55,9 +56,15 @@ function validateFormInput() {
 }
 
 function isValid(element) {
-    if (element.value === '' || element.checkValidity() === 'false') {
-        return false
-    } else return true
+    if(element === phoneNumber) {
+        if (element.checkValidity() === 'false') {
+            return false
+        } else return true
+    } else {
+        if (element.value === '' || element.checkValidity() === 'false') {
+            return false
+        } else return true
+    }
 }
 
 // Event listeners
@@ -74,6 +81,10 @@ lastName.addEventListener('input', () => {
 
 email.addEventListener('input', () => {
     validate(email)
+})
+
+phoneNumber.addEventListener('input', () => {
+    validate(phoneNumber)
 })
 
 password.addEventListener('input', () => {
